@@ -1,0 +1,77 @@
+CREATE DATABASE bb;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    is_admin TINYINT(1) DEFAULT 0);
+
+CREATE TABLE requester (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  age INT NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  tel VARCHAR(15) DEFAULT NULL,
+  bloodtype VARCHAR(3) DEFAULT NULL,
+  message TEXT DEFAULT NULL,
+  PRIMARY KEY (id));
+
+CREATE TABLE donor (
+    donor_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    weight DECIMAL(5,2) NOT NULL,
+    height DECIMAL(5,2) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    bloodtype VARCHAR(3) NOT NULL,
+    donation_history TEXT,
+    tattooing TINYINT(1) NOT NULL DEFAULT 0,
+    piercing TINYINT(1) NOT NULL DEFAULT 0,
+    dental_extraction TINYINT(1) NOT NULL DEFAULT 0,
+    agree TINYINT(1) NOT NULL DEFAULT 0
+);
+
+
+
+CREATE TABLE bloodinventory (
+    blood_inventory_id INT AUTO_INCREMENT PRIMARY KEY,
+    bloodtype ENUM('A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-') NOT NULL,
+    Unit_Available INT(4),
+    Available_Status ENUM('Yes', 'No') NOT NULL);
+
+INSERT INTO  bloodinventory (bloodtype, Unit_Available, Available_Status) 
+VALUES
+    ('A+', '30', 'Yes'),
+    ('A-', '30', 'Yes'),
+    ('B+', '30', 'Yes'),
+    ('B-', '30', 'Yes'),
+    ('O+', '30', 'Yes'),
+    ('O-', '30', 'Yes'),
+    ('AB+', '30', 'Yes'),
+    ('AB-','30', 'Yes');
+
+INSERT INTO users (username, email, password, is_admin) 
+VALUES ('admin', 'admin@gmail.com', '$2y$10$lml6XWjAoJ3MdIpML6EOMexRCP8YSxyNrAGICrsfIvwnqWgP4bn3G',1);
+
+INSERT INTO  donor (name,age,weight,height,email,phone,bloodtype,donation_history,tattooing,piercing,dental_extraction,agree) 
+VALUES
+    ('YAP', '21','50','161','ys@gmail.com','0133854985','B+','No', 0, 0, 0, 'Yes'),
+    ('SOON', '21','60','163','sjt@gmail.com','0127509321','O+','No', 0, 0, 0,'Yes'),
+    ('NG', '21','45','160','nlq@gmail.com','0107831992','A-','No',0, 0, 0,'Yes'),
+    ('KONG', '21','60','175','klj@gmail.com','0196649821','A-','No',0, 0, 0,'Yes'),
+    ('NG ', '21','48','159','nxp@gmail.com','0102341196','O+','No', 0, 0, 0,'Yes'),
+    ('ONG ', '21','43','159','ojw@gmail.com','0131984320','A+','No',0, 0, 0,'Yes'),
+    ('LYSA ', '21','48','160','lysa@gmail.com','0102341196','B-','No',0, 0, 0,'Yes'),
+    ('BRONSON', '21','60','173','bronson@gmail.com','0112943861','O+','No',0, 0, 0,'Yes');
+
+
+INSERT INTO requester (name, age, email, tel, bloodtype, message) VALUES 
+('John Doe', 30, 'johndoe@example.com', '012-7890555', 'O+', 'Looking for a blood donor with O+ blood type.'),
+('Jane Smith', 25, 'janesmith@example.com', '019-6678543', 'A-', 'Need a donor urgently for a family member.'),
+('Alice Johnson', 35, 'alicej@example.com', '011-12567894', 'AB+', 'Interested in donating blood next month.'),
+('Bob Brown', 40, 'bobbrown@example.com', '014-3397789', 'B+', 'Seeking information on blood donation process.'),
+('Charlie Davis', 28, 'charliedavis@example.com', '010-8990767', 'AB-', 'Looking for a matching blood donor for surgery.');
+
+

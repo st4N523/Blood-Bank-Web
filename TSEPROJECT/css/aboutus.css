@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Poetsen One", sans-serif;
+    }
+
+.subtitle{
+    font-size:36px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: black;
+    text-align: center;
+    caption-side: bottom;
+    font-family: "Poetsen One", sans-serif;
+}
+
+/* About Us Styles */
+.about-us {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+	height: 400px;
+}
+
+.about-us .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-us .column1, .about-us .column2 {
+    flex-basis: 48%;
+	padding: 30px 2px;
+}
+
+.about-us .column1 {
+    padding: 20px;
+}
+
+.about-us .column1 h1 {
+    padding-top: 0;
+    font-size: 35px;
+}
+
+.about-us .column1 p {
+    padding: 15px 0 25px;
+    font-size: 20px;
+}
+
+.about-us .column2 img {
+    width: 80%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Doctors Section Styles */
+.doctors {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #e5ddce;
+}
+
+.doctors h1 {
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.doctors .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.doctors .column1, .doctors .column2, .doctors .column3, .doctors .column4 {
+    flex-basis: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.doctors .column1 img, .doctors .column2 img, .doctors .column3 img, .doctors .column4 img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .doctors .column1, .doctors .column2 {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.doctors p {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa {
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}

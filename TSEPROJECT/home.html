@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <Title>Online Blood Bank</Title>
+        <link rel="stylesheet" href="/TSEPROJECT/css/Basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    font-family: "Poetsen One", sans-serif;
+    }
+
+    .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/TSEPROJECT/image/background2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    }
+
+    nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    nav img{
+    width: 100px;
+    }
+
+    .nav-links{
+    flex: 1;
+    text-align: right;
+    }
+
+    .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    }
+
+    .nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    }
+
+    .nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    }
+
+    .nav-links ul li:hover::after{
+    width: 100%;
+    }
+
+    .textbox{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    }
+
+    .textbox h1{
+    font-size: 62px;
+    }
+
+    .textbox p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+    }
+
+    .logout-btn{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .logout-btn:hover{
+        border: 1px solid #ff8080;
+        background: #ff8080;
+        transition: 1s;
+    }
+
+    .textbox{
+         width: 90%;
+         color: #fff;
+         position: absolute;
+         top:50%;
+         left:50%;
+         transform: translate(-50%,-50%);
+         text-align: center;
+    }
+
+    .textbox h1{
+        font-size: 62px;
+    }
+
+    .textbox p{
+        margin: 10px 0 40px;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .hero-btn{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .hero-btn:hover{
+        border: 1px solid #ff8080;
+        background: #ff8080;
+        transition: 1s;
+    }
+
+    .function{
+         width: 90%;
+         margin: auto;
+         text-align: center;
+         padding-top: 100px;
+    }
+
+    .function h1{
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+    .function p{
+        font-size: 14px;
+        color: #777;
+        font-weight: 300;
+        line-height: 22px;
+        padding: 10px;
+    }
+
+    .row{
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .function-col{
+        flex-basis: 31%;
+        background: #ff8080;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+
+    h3{
+        text-align: center;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .function-col:hover{
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .functionbtn{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 50px;      
+    }
+
+    .functionbtn-col{
+        flex-basis: 32%;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .functionbtn-col img{
+        width: 100%;
+    }
+    
+    .layer{
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 1s;
+    }
+
+    .layer:hover{
+        background: rgba(226,0,0,0.7);
+    }
+
+    .layer h3{
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        font-size: 26px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    .layer:hover h3{
+        bottom: 49%;
+        opacity: 1;
+    }
+
+    .au{
+        margin: 100px auto;
+        width: 80%;
+        background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(/TSEPROJECT/image/banner.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding: 100px 0;
+    }
+
+    .au h1{
+        color: #fff;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+
+    </style>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="home.html"><img src="/TSEPROJECT/image/hero.png"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="donation.php">BLOOD DONATION</a></li>
+                        <li><a href="request.php">REQUEST BLOOD</a></li>
+                        <li><a href="camp.html">CAMP SCHEDULE</a></li>
+                        <li><a href="inventory.html">BLOOD INVENTORY</a></li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <a href="signin.php" class="logout-btn">LOGOUT</a>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="textbox">
+                <h1>NELYS Online Blood Bank</h1>
+                <p>You are the Hero of the lives,Join us now to save more life!</p>
+                <a href="aboutus.html" class="hero-btn">Visit us to know more</a>
+            </div>
+
+        </section>
+
+        <section class="function">
+            <h1>This web provides</h1>
+        <div class="row">
+            <div class="function-col">
+                 <h3>DONATE</h3>
+                 <p>Make a blood donation,your one donation can save 3 lives.</p>
+            </div>
+
+            <div class="function-col">
+                <h3>REQUEST</h3>
+                <p>If you need blood,please request from us.</p>
+           </div>
+
+           <div class="function-col">
+                <h3>CHECK INVENTORY</h3>
+                <p>Check the quantity of type of blood</p>
+           </div>
+        </div>
+        </section>
+
+        <section class="functionbtn">
+            <h1>Our Main Function</h1>
+            <div class="row">
+                <div class="functionbtn-col">
+                  <a href="donation.php"><img src="/TSEPROJECT/image/donate1.jpg"></a>
+                  <div class="layer">
+                    <h3>DONATE</h3>
+                  </div>
+                </div>
+
+                <div class="functionbtn-col">
+                    <a href="request.php"><img src="/TSEPROJECT/image/request.png"></a>
+                    <div class="layer">
+                      <h3>REQUEST</h3>
+                    </div>
+                </div>
+
+                <div class="functionbtn-col">
+                    <a href="inventory.html"><img src="/TSEPROJECT/image/inventory.jpg"></a>
+                    <div class="layer">
+                      <h3>CHECK INVENTORY</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="au">
+            <h1>We have a lot of professional<br>No worry if any question can contact us</h1>
+            <a href="aboutus.html" class="hero-btn">ABOUT US</a>
+        </section>
+
+        <div id="footer"></div>
+        <script src="/TSEPROJECT/javascript/loadFooter.js"></script>
+
+    </body>
+</html>

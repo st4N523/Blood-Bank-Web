@@ -1,0 +1,77 @@
+.subtitle{
+    font-size:36px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: black;
+    text-align: center;
+    caption-side: bottom;
+    font-family: "Poetsen One", sans-serif;
+}
+
+body{
+    background-color: #ebe9e4;
+}
+
+table{
+    width: 80%;
+    margin-bottom: 2.5cm;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    border-collapse: none;
+    box-shadow: 10px 10px 10px grey;
+}
+
+th, td{
+    font-family: Georgia, Helvetica, sans-serif;
+    text-align: center;
+    padding: 8px;
+    width: auto;
+    background-color: #fff;
+}
+
+th{
+    background-color:#EC7B7C;
+}
+
+.request-button{
+    font-family: Georgia, sans-serif;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #EC7B7C;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    width: auto;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.request-button span{
+    cursor: pointer;
+    color: black;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.request-button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.request-button:hover span{
+    padding-right: 25px;
+}
+
+.request-button:hover span:after{
+    opacity: 1;
+    right: 0;
+}

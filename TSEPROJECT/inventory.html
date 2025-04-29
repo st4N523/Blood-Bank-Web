@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blood Inventory</title>
+        <link rel="stylesheet" href="/TSEPROJECT/css/bloodinventory.css">
+    </head>
+    <body>
+        <div id="navigation"></div>
+        <!-- Content of the Blood Inventory page-->
+        <script src="/TSEPROJECT/javascript/loadNavigation.js"></script>
+        <header class="subtitle">Blood Inventory</header>
+        <section>
+            <table class="center">
+                <tbody id="inventory-table-body">
+                    <!--Table rows will be inserted here by JavaScript-->
+                </tbody>
+            </table>
+            <script>
+                document.addEventListener("DOMContentLoaded", function(){
+                    fetch('inventory_data.php')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('inventory-table-body').innerHTML = data;
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+                });
+            </script>
+        </section>    
+        <div id="footer"></div>
+        <script src="/TSEPROJECT/javascript/loadFooter.js"></script>
+    </body>
+</html>
